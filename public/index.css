@@ -1,0 +1,19 @@
+
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-links {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .tab-links.active {
+            background-color: #ccc;
+        }
+
