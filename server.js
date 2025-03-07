@@ -11,7 +11,10 @@ const frequencias = new Array(10).fill(null);
 app.use(express.static('public'));
 
 io.on('connection', (socket) => {
-    console.log('Novo cliente conectado');
+    const clientIp = socket.handshake.address; // Obtém o IP do cliente
+    const clientPort = socket.handshake.port; // Obtém a porta do cliente (não é sempre disponível)
+
+    console.log(`Novo cliente conectado: IP ${clientIp}, Porta ${clientPort}`);
 
     socket.on('registrarFrequencias', (dadosFrequencias) => {
         if (Array.isArray(dadosFrequencias)) {
